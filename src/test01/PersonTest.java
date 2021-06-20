@@ -62,3 +62,10 @@ class Test01
         System.out.println("怎么没有更新?????");
     }
 }
+
+class Test02
+{
+    {
+        System.out.println("终于给爷更新了!!!!!");
+    }
+}
