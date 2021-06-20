@@ -4,68 +4,54 @@ package test01;
  * @author LYHstart
  * @create 2021-06-19 18:56
  */
-//很显然这是一行测试代码
-    //不错，这也是一行测试代码
+
 public class PersonTest
 {
     public static void main(String[] args)
     {
-        //创建Person类的对象
-        Person p1 = new Person();
-        //scanner scan = new Scanner(System.in);
+        reLoad r1 = new reLoad();
+        r1.name = "Tom";
+        int x = r1.max(1,2);
+        System.out.println("int_max:"+x);
+        double y = r1.max(1.1,2.2,3.30);
+        System.out.println("double_max:"+y);
 
-        //调用对象的结构：属性与方法
-        p1.name = "Tom";
-
-        Person p2 = p1;                     //P1与P2指向同一块内存地址
-        System.out.println(p2.name);       //Tom
-
-        Person p3 = new Person();
-        System.out.println(p3.name);       //Null
-        p3 = p1;                            //C++中的赋值语句无!!!
-        p3.name = "Jerry";
-        System.out.println(p1.name);       //Jerry
-        System.out.println(p3.name);       //Jerry
+        Varargs v1 = new Varargs();
+        v1.show("Hello world!");
+        v1.show();
+        v1.show("he","ll","o"," world");
     }
 }
 
-class Person
+//方法重载与三目运算符
+class reLoad
 {
-    //属性
-    String name;
-    int age;
-    boolean isMale;
-    //方法
-    public void eat()
+    public String name;
+
+    public int max(int x,int y)
     {
-        System.out.println("人可以吃饭");
+        return x>y?x:y;
     }
-    public void sleep()
+    public double max(double x,double y,double z)
     {
-        System.out.println("人可以睡觉");
-        //eat();
-    }
-    public void talk(String language)
-    {
-        System.out.println("人可以说话，使用:"+language);
+        double max = x>y?x:y;
+        return max>z?max:z;
     }
 }
 
-class Test
+//JAVA可变个数形参
+class Varargs
 {
+    public String name;
 
-}
-
-class Test01
-{
+    public void show(String s1)
     {
-        System.out.println("怎么没有更新?????");
+        System.out.println("show(String s1)");
     }
-}
-
-class Test02
-{
+    public void show(String ... s2)
     {
-        System.out.println("终于给爷更新了!!!!!");
+        System.out.println("show(String ... s2)");
     }
+    //public void show(int xString ... s1)      //不支持复合
+
 }
