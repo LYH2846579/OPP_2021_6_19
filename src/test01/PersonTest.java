@@ -9,17 +9,27 @@ public class PersonTest
 {
     public static void main(String[] args)
     {
-        reLoad r1 = new reLoad();
-        r1.name = "Tom";
-        int x = r1.max(1,2);
-        System.out.println("int_max:"+x);
-        double y = r1.max(1.1,2.2,3.30);
-        System.out.println("double_max:"+y);
+        Circle c = new Circle();
+        PassObject po = new PassObject();
+        po.printAreas(c,5);
 
-        Varargs v1 = new Varargs();
-        v1.show("Hello world!");
-        v1.show();
-        v1.show("he","ll","o"," world");
+        //方法重载与三目运算符
+//        reLoad r1 = new reLoad();
+//        r1.name = "Tom";
+//        int x = r1.max(1,2);
+//        System.out.println("int_max:"+x);
+//        double y = r1.max(1.1,2.2,3.30);
+//        System.out.println("double_max:"+y);
+//
+        //JAVA可变个数形参
+//        Varargs v1 = new Varargs();
+//        v1.show("Hello world!");
+//        v1.show();
+//        v1.show("he","ll","o"," world");
+//        int[] array = new int[10];
+//        System.out.println(array);
+//        char[] array2 = new char[10];
+//        System.out.println(array2);
     }
 }
 
@@ -54,4 +64,28 @@ class Varargs
     }
     //public void show(int xString ... s1)      //不支持复合
 
+}
+
+class Circle
+{
+    double radius;
+
+    public double findArea()
+    {
+        return radius*radius*Math.PI;
+    }
+}
+
+class PassObject
+{
+
+    public void printAreas(Circle c,int time)
+    {
+        System.out.println("Radius"+"\tArea");
+        for(int i=1;i<=time;i++)
+        {
+            c.radius = i;
+            System.out.println(c.radius+"\t\t"+c.findArea());
+        }
+    }
 }
