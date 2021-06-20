@@ -49,3 +49,8 @@ class Person
         System.out.println("人可以说话，使用:"+language);
     }
 }
+
+class Test
+{
+
+}
