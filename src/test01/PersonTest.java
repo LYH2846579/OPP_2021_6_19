@@ -5,6 +5,7 @@ package test01;
  * @create 2021-06-19 18:56
  */
 //很显然这是一行测试代码
+    //不错，这也是一行测试代码
 public class PersonTest
 {
     public static void main(String[] args)
@@ -53,4 +54,11 @@ class Person
 class Test
 {
 
+}
+
+class Test01
+{
+    {
+        System.out.println("怎么没有更新?????");
+    }
 }
